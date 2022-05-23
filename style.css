@@ -1,0 +1,118 @@
+* {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+    /* grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 10vh 20vh 1fr 20vh; */
+    justify-items: center;
+    margin: 5rem 5rem 2rem 5rem;
+    padding: 1rem 3rem;
+    border: 2px solid salmon;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.title-banner {
+    grid-row: 2/3;
+    grid-column: 2/3;;
+    display: flex;
+    flex: 1;
+    font-size: 3rem;
+    background-color: chocolate;
+    justify-content: space-between;
+    border: 2px solid blanchedalmond;
+    border-radius: 2rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    
+}
+
+.banner {
+    padding-left: 2rem;
+    color: burlywood;
+}
+
+#addBook {
+    background-color: mediumvioletred;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin-right: 2rem;
+    width: auto;
+}
+
+#addBook:hover {
+    transform: scale(1.01);
+    border: 4px solid darkslateblue;
+}
+
+.library {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.card {
+    display: flex;
+    flex: 1;
+    justify-content: end;
+    
+    background: linear-gradient(to bottom, rgba(156,11,214,1) 0%, rgba(156,11,214,1) 11%, rgba(255,84,46,1) 83%, rgba(255,84,46,1) 100%);
+    border: 2px solid #3c493f;
+    border-radius: 1rem;
+    padding: 0 0 0 1rem;
+    max-height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;     
+    
+    border: 2px solid black;
+}
+
+.card-face {
+    display: grid;
+    grid-template-rows: 50% 25% 25%;
+    background-color: #F0F7F4;
+    padding: 1rem;
+    margin: -2px -2px -2px 0;
+    border: 2px solid #3c493f;
+}   
+
+.card-body {
+    margin: 1em 1em;
+
+}
+    
+.card-face:hover {
+    transform: scale(1.01);
+}
+
+.card-title {
+    font-size: 2rem;
+}
+
+.card-footer {
+    justify-self: end;
+    
+    margin-top: 1em;
+}
+
+.read-icon:hover {
+    transform: scale(1.01);
+    filter: invert(68%) sepia(19%) saturate(4937%) hue-rotate(39deg) brightness(103%) contrast(73%);
+
+}
+
+.del-icon:hover {
+    transform: scale(1.01);
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    transform: rotate(15deg);
+}
