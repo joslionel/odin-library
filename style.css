@@ -1,3 +1,8 @@
+:root {
+    --black: rgba(0, 0, 0, 0.8);
+    --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
 * {
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -6,6 +11,7 @@
     display: flex;
     flex-direction: column;
     background-color: cadetblue;
+    grid-column: 2/3;
     /* grid-template-columns: 1fr 5fr 1fr;
     grid-template-rows: 10vh 20vh 1fr 20vh; */
     justify-items: center;
@@ -116,3 +122,88 @@
     filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
     transform: rotate(15deg);
 }
+
+.add-book-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+}
+
+.add-book-modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.add-book-modal-dialog {
+    display: flex;
+    margin: auto;
+    width: 40vw;
+    justify-self: center;
+    cursor: default;
+    position: relative;
+    
+    
+}
+
+#add-book-card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+    background: linear-gradient(to bottom, rgba(156,11,214,1) 0%, rgba(156,11,214,1) 11%, rgba(255,84,46,1) 83%, rgba(255,84,46,1) 100%);
+    border: 2px solid #3c493f;
+    border-radius: 1rem;
+    padding: 0 0 0 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;     
+    
+    border: 2px solid black;
+}
+
+.add-book-card-face {
+    display: grid;
+    grid-template-rows: 20% 50% 30%;
+    background-color: #F0F7F4;
+    padding: 1rem;
+    margin: -2px -2px -2px 0;
+    border: 2px solid #3c493f;
+}
+
+#add-book-body {
+    display: grid;
+    grid-row-start: 2;
+    font-weight: bold;
+    
+}
+
+.add-book-card-face>div>input {
+    border-radius: 1rem;
+    padding: 5px;
+    margin: 5px;
+}
+
+.add-book-card-footer {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    grid-row: 3/4;
+    margin-top: 3em;
+}
+
+.add-book-card-footer>button {
+    border: 2px solid black;
+    border-radius: 1rem;
+    
+}
+

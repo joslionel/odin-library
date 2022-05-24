@@ -9,16 +9,46 @@
     <title>Library App</title>
 </head>
 <body>
-    <div class="main-content">
-        <div class="title-banner">
-            <div class="banner">My Javascript Library</div>
-            <button id="addBook">New Book</button>
+    <div class="container">
+        <div class="main-content">
+            <div class="title-banner">
+                <div class="banner">My Javascript Library</div>
+                <button data-open="add-book-modal" id="addBook">New Book</button>
+            </div>
+        
+            <div class="library">
+        
+            </div>
         </div>
         
-        <div class="library">
-            
+        <div class="add-book-modal" id="add-book-modal">
+            <div class="add-book-modal-dialog">
+                <div id="add-book-card">
+                    <div class="add-book-card-face">
+                        <div class="card-title">
+                            Add a book to the collection
+                        </div>
+                        <div class="card-body" id="add-book-body">
+                            <label for="booktitle">Book title</label>
+                                <input type="text" id="bookTitle" placeholder="The Whale And The Snail"/>
+                            <label for="bookAuthor">Author</label>
+                                <input type="text" id="bookAuthor" placeholder="Julia Donaldson"/>
+                            <label for="bookPages">Book length (pages)</label>
+                            <input type="number" id="bookPages" placeholder="28"/>
+                        </div>
+                        <div class="add-book-card-footer">
+                            <div class="read-slider">
+                                <label for="readOrNot">Read?</label>
+                                <input type="checkbox" id="readOrNot" name="read-switch"/>
+                            </div>
+                            <button class="submit-book">Add Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
+
 </body>
 </html>

@@ -125,12 +125,15 @@ function addSelectorsToButtons() {
     const readButtons = document.querySelectorAll('.read-icon');
     const delButtons = document.querySelectorAll('.del-icon');
     const newBookBtn = document.querySelector('#addBook');
+    const submitButton = document.querySelector('.submit-book');
     
     readButtons.forEach(button => button.addEventListener('click', readBook));
     
     delButtons.forEach(button => button.addEventListener('click', deleteBook));
     
-    newBookBtn.addEventListener('click', addNewBook);
+    newBookBtn.addEventListener('click', addNewBookOpenModal);
+
+    submitButton.addEventListener('click', addNewBook);
 }
 
 
@@ -163,6 +166,43 @@ function deleteBook(e) {
     
 }
 
+function addNewBookOpenModal(e) {
+    const isVisible = "is-visible";
+
+    
+    const modalId = this.dataset.open;
+    const modal = document.getElementById(modalId)
+    
+    modal.classList.add(isVisible);
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target == modal)
+        modal.classList.remove(isVisible)
+    });
+
+    
+}
+
 function addNewBook(e) {
-    console.log(this.id)
+    
+    const bookTitle = document.getElementById('bookTitle').value;
+    const bookAuthor = document.getElementById('bookAuthor').value;
+    const bookPages = document.getElementById('bookPages').value;
+    const readCheckbox = document.getElementById('readOrNot').checked;
+
+    let readOrNot = 'unread'
+
+    if (readCheckbox) {
+        readOrNot = 'read'
+    }
+    if (bookTitle && bookAuthor && bookPages) {
+    addBookToLibrary([bookTitle, bookAuthor, bookPages, readOrNot])
+    loopEach(library)
+    }
+
+    const modal = document.getElementById('add-book-modal')
+    modal.classList.remove('is-visible')
+    
+    
+
 }
